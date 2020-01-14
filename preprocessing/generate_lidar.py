@@ -74,5 +74,5 @@ if __name__ == '__main__':
         # pad 1 in the indensity dimension
         lidar = np.concatenate([lidar, np.ones((lidar.shape[0], 1))], 1)
         lidar = lidar.astype(np.float32)
-        lidar.tofile('{}/{}.bin'.format(args.save_dir, predix))
+        np.save('{}/{}.bin'.format(args.save_dir, predix),lidar)
         print('Finish Depth {}'.format(predix))
